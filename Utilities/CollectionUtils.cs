@@ -6,16 +6,11 @@ namespace Utilities
 {
     static public class CollectionUtils
     {
-        //Returns a new dictionary where every array value is grouped their value and then counted
+        //Returns a new dictionary where every ICollection (Array, List, Dictionary) value is grouped their value and then counted
         //Original values are the dict keys, value per key is duplicate count
-        static public Dictionary<T, int> GetDuplicateData<T>(T[] array)
+        static public Dictionary<T, int> GetDuplicateData<T>(ICollection<T> coll)
         {
-            return array.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
-        }
-
-        static public Dictionary<T, int> GetDuplicateData<T>(List<T> list)
-        {
-            return list.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
+            return coll.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
         }
 
         //Returns a for
