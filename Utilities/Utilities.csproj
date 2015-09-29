@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="ConsoleUtil.cs" />
     <Compile Include="MathUtil.cs" />
+    <Compile Include="Singleton.cs" />
     <Compile Include="StringUtil.cs" />
     <Compile Include="CollectionUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
