@@ -7,7 +7,7 @@ namespace Utilities
         static Singleton() { }
         private static T _instance;
 
-        public static readonly T Instance
+        public static T Instance
         {
             get
             {
