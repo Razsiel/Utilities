@@ -12,8 +12,8 @@ namespace Utilities
         {
             return coll.GroupBy(x => x).ToDictionary(g => g.Key, g => g.Count());
         }
-
-        //Returns a for
+        
+        //Returns a formatted string for any list collection. (string eg. "elem1, elem2, elem3...")
         static public string ToFormattedString<T>(this List<T> coll)
         {
             //Initialize with NAMESPACE.TYPE(
