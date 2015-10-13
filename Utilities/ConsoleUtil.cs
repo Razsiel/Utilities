@@ -44,7 +44,7 @@ namespace Utilities
             Console.ReadKey();
         }
 
-        static public string GetUserInput(string regexPattern)
+        static public string GetUserInput(string regexPattern, string errorMessage = "<Invalid input>")
         {
             string input = "";
             bool correctInput = false;
@@ -53,7 +53,7 @@ namespace Utilities
                 input = Console.ReadLine();
                 correctInput = Regex.IsMatch(input, regexPattern, RegexOptions.IgnoreCase);
                 if (!correctInput)
-                    Console.WriteLine("<Invalid input>");
+                    Console.WriteLine(errorMessage);
             }
             return input;
         }
