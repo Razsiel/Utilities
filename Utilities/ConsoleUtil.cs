@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Utilities
 {
@@ -41,6 +42,20 @@ namespace Utilities
             Console.WriteLine();
             Console.WriteLine("Enter any key to exit...");
             Console.ReadKey();
+        }
+
+        static public string GetUserInput(string regexPattern)
+        {
+            string input = "";
+            bool correctInput = false;
+            while (!correctInput)
+            {
+                input = Console.ReadLine();
+                correctInput = Regex.IsMatch(input, regexPattern, RegexOptions.IgnoreCase);
+                if (!correctInput)
+                    Console.WriteLine("<Invalid input>");
+            }
+            return input;
         }
     }
 }
